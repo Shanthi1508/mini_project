@@ -1,0 +1,5 @@
+node_modules/
+package-lock.json
+*.log
+calculator_screenshot.png
+test_ui.mjs

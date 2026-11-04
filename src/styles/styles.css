@@ -1,0 +1,214 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --calc-bg: #1e293b;
+  --calc-border: #334155;
+  --screen-bg: #0f172a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-accent: #38bdf8;
+  --btn-digit-bg: #334155;
+  --btn-digit-hover: #475569;
+  --btn-action-bg: #475569;
+  --btn-action-hover: #64748b;
+  --btn-op-bg: #f59e0b;
+  --btn-op-hover: #d97706;
+  --btn-op-active: #b45309;
+  --btn-equals-bg: #10b981;
+  --btn-equals-hover: #059669;
+  --shadow-main: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-gradient);
+  font-family: var(--font-family);
+  color: var(--text-main);
+  padding: 20px;
+}
+
+.calculator-app {
+  width: 100%;
+  max-width: 360px;
+  background-color: var(--calc-bg);
+  border: 1px solid var(--calc-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-main);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.window-decorations {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red {
+  background-color: #ef4444;
+}
+
+.dot-yellow {
+  background-color: #f59e0b;
+}
+
+.dot-green {
+  background-color: #10b981;
+}
+
+.calculator-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-right: 44px;
+}
+
+.calculator-screen {
+  background-color: var(--screen-bg);
+  margin: 16px 16px 8px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-inner);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100px;
+  word-break: break-all;
+}
+
+.history-display {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  min-height: 1.4rem;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+.main-display {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.1;
+  margin-top: 4px;
+  text-align: right;
+  transition: color 0.15s ease;
+}
+
+.main-display.error {
+  color: #f87171;
+}
+
+.calculator-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 16px;
+}
+
+.btn {
+  height: 58px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.35rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+  user-select: none;
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--text-accent);
+}
+
+.btn-digit {
+  background-color: var(--btn-digit-bg);
+  color: var(--text-main);
+}
+
+.btn-digit:hover {
+  background-color: var(--btn-digit-hover);
+}
+
+.btn-action {
+  background-color: var(--btn-action-bg);
+  color: #e2e8f0;
+}
+
+.btn-action:hover {
+  background-color: var(--btn-action-hover);
+}
+
+.btn-operator {
+  background-color: var(--btn-op-bg);
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.btn-operator:hover {
+  background-color: var(--btn-op-hover);
+}
+
+.btn-operator.active-op {
+  background-color: var(--btn-op-active);
+  box-shadow: 0 0 0 2px #fde68a;
+}
+
+.btn-equals {
+  background-color: var(--btn-equals-bg);
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+
+.btn-equals:hover {
+  background-color: var(--btn-equals-hover);
+}
+
+.calculator-footer {
+  padding: 8px 16px 14px;
+  text-align: center;
+}
+
+.shortcut-tip {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}

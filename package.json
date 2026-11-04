@@ -1,0 +1,20 @@
+{
+  "name": "simple-calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator with well-defined architecture, pure business logic, and modern responsive UI",
+  "main": "src/engine/calculator.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "calculator",
+    "math",
+    "clean-architecture"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}
